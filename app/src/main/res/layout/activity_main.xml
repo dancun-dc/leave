@@ -27,10 +27,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="你の学校:"/>
+            android:text="     你の学校:"/>
         <EditText
             android:id="@+id/schoolName"
             android:layout_width="match_parent"
+            android:layout_marginRight="10dp"
             android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout
@@ -40,10 +41,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="你の名字:"/>
+            android:text="     你の名字:"/>
         <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"
+            android:layout_marginRight="10dp"
             android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout
@@ -55,6 +57,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:background="#f66"
+        android:layout_marginBottom="20dp"
         android:id="@+id/btn_agree"
         android:text="同意并继续" />
 

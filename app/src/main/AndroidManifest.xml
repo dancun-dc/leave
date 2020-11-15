@@ -4,11 +4,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icons"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/icons"
         android:supportsRtl="true"
-        android:theme="@style/Theme.日在校园">
+        android:theme="@style/Theme.leave">
         <activity android:name=".activity.LeaveStateActivity"></activity>
         <activity android:name=".activity.LeaveActivity" />
         <activity android:name=".activity.LeaveDetail" />
