@@ -9,6 +9,18 @@
 
 如果对你有帮助请请点一个start
 
+截图:
+
+![Image text](./images/01.jpg)
+
+![Image text](./images/02.jpg)
+
+![Image text](./images/03.jpg)
+
+![Image text](./images/04.jpg)
+
+![Image text](./images/05.jpg)
+
 #### 软件架构
 软件架构说明
 
