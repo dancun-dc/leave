@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">日在校园</string>
+    <string name="log">
+        \n\n\n特别说明:本软件仅供内部使用,不收费,不担责,请勿传播\n
+        请严格按照默认格式填写,否则软件将崩溃\n
+        本人事多,懒得修复\n
+        如果出现问题请直接清除软件数据\n
+        出现任何问题,作者不承担任何法律责任\n
+        作者:@dancun\n
+        使用本软件就代表你同意上述条件.\n\n\n
+    </string>
+</resources>
