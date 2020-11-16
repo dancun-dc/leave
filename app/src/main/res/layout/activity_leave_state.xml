@@ -210,9 +210,9 @@
             android:layout_width="match_parent"
             android:paddingTop="70dp"
             android:paddingLeft="60dp"
-            android:layout_height="380dp"
+            android:layout_height="580dp"
             android:orientation="vertical"
-            android:background="@mipmap/footer">
+            android:background="@mipmap/foot2">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -266,6 +266,70 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
                     android:id="@+id/date2"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="二级 : "
+                    android:textColor="#999"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="[辅导员]XXX - 审批"
+                    android:textColor="#999"
+                    android:id="@+id/tv_carbon2"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#0dc478"
+                    android:text=" 通过"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:id="@+id/date3"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="三级 : "
+                    android:textColor="#999"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[辅导员]XXX - 审批"
+                    android:textColor="#999"
+                    android:id="@+id/tv_carbon3"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#0dc478"
+                    android:text=" 通过"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:id="@+id/date4"/>
             </LinearLayout>
 
         </LinearLayout>

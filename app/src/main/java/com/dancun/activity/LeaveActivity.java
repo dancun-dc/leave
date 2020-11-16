@@ -22,7 +22,7 @@ import java.util.Date;
 public class LeaveActivity extends AppCompatActivity {
     private TextView tvStartDate,tvStartTime,tvEndDate,tvEndTime;
     private BaseEntity baseEntity = new BaseEntity();
-    private EditText editCause,editCarbon,editLocal,editTel;
+    private EditText editCause,editCarbon,editLocal,editTel,editCarbon2,editCarbon3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,8 @@ public class LeaveActivity extends AppCompatActivity {
         tvEndTime = findViewById(R.id.tv_end_time);
         tvEndDate = findViewById(R.id.tv_edit_end_date);
         editCarbon = findViewById(R.id.edit_carbon);
+        editCarbon2 = findViewById(R.id.edit_carbon1);
+        editCarbon3 = findViewById(R.id.edit_carbon2);
         editLocal = findViewById(R.id.edit_local);
         editCause = findViewById(R.id.edit_cause);
         editTel = findViewById(R.id.edit_tel);
@@ -84,6 +86,8 @@ public class LeaveActivity extends AppCompatActivity {
         baseEntity.setLeaveType("事假");
         baseEntity.setTel(editTel.getText().toString());
         baseEntity.setLocal(editLocal.getText().toString());
+        baseEntity.setCarbon2(editCarbon2.getText().toString());
+        baseEntity.setCarbon3(editCarbon3.getText().toString());
         if (baseEntity.getStartDate()==""){
             baseEntity.setStartDate(new SimpleDateFormat("yyyy-MM-dd ").format(new Date())+"06:00");
         }

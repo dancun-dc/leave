@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class LeaveStateActivity extends AppCompatActivity {
-    private TextView tvStartDate,tvEndDate,tvTel,tvCause,tvLocal,tvName,tvDate1,tvDate2,tvCarbon,tvCarbon1,thistime;
+    private TextView tvStartDate,tvEndDate,tvTel,tvCause,tvLocal,tvName,tvDate1,tvDate2,tvDate3,tvDate4,tvCarbon,tvCarbon1,tvCarbon2,tvCarbon3,thistime;
     private  BaseEntity baseEntit;
 
     @Override
@@ -34,10 +34,16 @@ public class LeaveStateActivity extends AppCompatActivity {
         tvEndDate.setText(""+baseEntit.getEndDate());
         tvCause.setText(""+baseEntit.getLeaveCause());
         tvCarbon.setText(""+baseEntit.getCarbon());
-        tvCarbon1.setText("[辅导员]"+baseEntit.getCarbon()+" - 审批");
+        tvCarbon1.setText(baseEntit.getCarbon()+" - 审批");
+        tvCarbon2.setText(baseEntit.getCarbon2()+" - 审批");
+        tvCarbon3.setText(baseEntit.getCarbon3()+" - 审批");
         tvLocal.setText(""+baseEntit.getLocal());
-        tvDate1.setText(new SimpleDateFormat("MM-dd hh:mm").format(new Date()));
-        tvDate2.setText(new SimpleDateFormat("MM-dd hh:mm").format(new Date()));
+        String day = new SimpleDateFormat("MM-dd hh").format(new Date());
+        int min = Integer.parseInt(new SimpleDateFormat("mm").format(new Date()));
+        tvDate1.setText(day+(min-15));
+        tvDate2.setText(day+(min-8));
+        tvDate3.setText(day+(min-5));
+        tvDate4.setText(day+(min-3));
         tvTel.setText(""+baseEntit.getTel());
         tvName.setText(""+baseEntit.getName());
 
@@ -49,9 +55,13 @@ public class LeaveStateActivity extends AppCompatActivity {
         tvCause = findViewById(R.id.tv_cause);
         tvCarbon = findViewById(R.id.tv_carbon);
         tvCarbon1 = findViewById(R.id.tv_carbon1);
+        tvCarbon2 = findViewById(R.id.tv_carbon2);
+        tvCarbon3 = findViewById(R.id.tv_carbon3);
         tvLocal = findViewById(R.id.tv_local);
         tvDate1 = findViewById(R.id.date1);
         tvDate2 = findViewById(R.id.date2);
+        tvDate3 = findViewById(R.id.date3);
+        tvDate4 = findViewById(R.id.date4);
         tvTel = findViewById(R.id.tv_tel);
         tvName = findViewById(R.id.tv_name);
         thistime = findViewById(R.id.thistime);

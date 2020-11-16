@@ -14,6 +14,8 @@ public class BaseEntity implements Serializable {
     private static String leaveType;
     private static String leaveCause;
     private static String carbon;
+    private static String carbon2;
+    private static String carbon3;
     private static String local;
     private static String tel;
     private static String name;
@@ -87,5 +89,21 @@ public class BaseEntity implements Serializable {
 
     public static void setTel(String tel) {
         BaseEntity.tel = tel;
+    }
+
+    public static String getCarbon2() {
+        return carbon2;
+    }
+
+    public static void setCarbon2(String carbon2) {
+        BaseEntity.carbon2 = carbon2;
+    }
+
+    public static String getCarbon3() {
+        return carbon3;
+    }
+
+    public static void setCarbon3(String carbon3) {
+        BaseEntity.carbon3 = carbon3;
     }
 }
