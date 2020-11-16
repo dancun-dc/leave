@@ -38,7 +38,7 @@ public class LeaveStateActivity extends AppCompatActivity {
         tvCarbon2.setText(baseEntit.getCarbon2()+" - 审批");
         tvCarbon3.setText(baseEntit.getCarbon3()+" - 审批");
         tvLocal.setText(""+baseEntit.getLocal());
-        String day = new SimpleDateFormat("MM-dd hh").format(new Date());
+        String day = new SimpleDateFormat("MM-dd hh:").format(new Date());
         int min = Integer.parseInt(new SimpleDateFormat("mm").format(new Date()));
         tvDate1.setText(day+(min-15));
         tvDate2.setText(day+(min-8));
