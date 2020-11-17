@@ -23,6 +23,10 @@ public class LeaveActivity extends AppCompatActivity {
     private TextView tvStartDate,tvStartTime,tvEndDate,tvEndTime;
     private BaseEntity baseEntity = new BaseEntity();
     private EditText editCause,editCarbon,editLocal,editTel;
+    private String startTime="06:00";
+    private String endTime="23:00";
+    private String startDate=new SimpleDateFormat("MM-dd ").format(new Date());
+    private String endDate=new SimpleDateFormat("MM-dd ").format(new Date());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +49,14 @@ public class LeaveActivity extends AppCompatActivity {
         new DatePickerDialog(LeaveActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override//当选择某一个日期会执行 onDateSet这个函数
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                String date = String.format("%s-%s",(month<10?""+month:""+month),(day<10?"0":""+day));
+                String date = String.format("%s-%s ",(month<10?""+month:""+month),(day<10?"0"+day:""+day));
                 if (v.getId()==R.id.tv_edit_satrt_date) {
                     tvStartDate.setText(date + "  ▼");
-                    baseEntity.setStartDate(date);
+                    startDate=date;
                 }
                 else{
                     tvEndDate.setText(date+"  ▼");
-                    baseEntity.setEndDate(date);
+                    endDate=date;
                 }
                 Toast.makeText(LeaveActivity.this,date,Toast.LENGTH_SHORT).show();
             }
@@ -65,14 +69,14 @@ public class LeaveActivity extends AppCompatActivity {
     public void setTime(View v){
         new TimePickerDialog(LeaveActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
-            public void onTimeSet(TimePicker timePicker, int h, int s) {
-                String time=String.format("%s:%s",(h<10?"0"+h:""+h),(s<10?"0"+s:""+h));
+            public void onTimeSet(TimePicker timePicker, int h, int m) {
+                String time=String.format("%s:%s",(h<10?"0"+h:""+h),(m<10?"0"+m:""+m));
                 if (v.getId()==R.id.tv_end_time){
                     baseEntity.setEndDate(baseEntity.getEndDate()+"  "+time);
-                    tvEndTime.setText(time);
+                   endTime = time;
                 }else{
                     baseEntity.setStartDate(baseEntity.getStartDate()+"  "+time);
-                    tvStartTime.setText(time);
+                    endTime = time;
                 }
 
             }
@@ -84,12 +88,8 @@ public class LeaveActivity extends AppCompatActivity {
         baseEntity.setLeaveType("事假");
         baseEntity.setTel(editTel.getText().toString());
         baseEntity.setLocal(editLocal.getText().toString());
-        if (baseEntity.getStartDate()==""){
-            baseEntity.setStartDate(new SimpleDateFormat("yyyy-MM-dd ").format(new Date())+"06:00");
-        }
-        if (baseEntity.getEndDate()==""){
-            baseEntity.setEndDate(new SimpleDateFormat("yyyy-MM-dd ").format(new Date())+"23:00");
-        }
+        baseEntity.setStartDate(startDate+startTime);
+        baseEntity.setEndDate(endDate+endTime);
         Intent intent = new Intent(LeaveActivity.this,LeaveStateActivity.class);
         Bundle bundle =new Bundle();
         bundle.putSerializable("baseEntity",baseEntity);

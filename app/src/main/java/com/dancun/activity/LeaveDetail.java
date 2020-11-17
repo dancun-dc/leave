@@ -23,9 +23,16 @@ public class LeaveDetail extends AppCompatActivity {
         setContentView(R.layout.activity_leave_detail);
         tvDates = findViewById(R.id.tv_dates);
         tvLeaveDate = findViewById(R.id.tv_leave_date);
+        String date="";
+        try {
+            Date start = new SimpleDateFormat("MM-dd hh:mm").parse(baseEntity.getStartDate());
+            Date end = new SimpleDateFormat("MM-dd hh:mm").parse(baseEntity.getEndDate());
+            date =new SimpleDateFormat("共hh小时mm分").format(new Date(end.getTime()-start.getTime()));
+        }catch (Exception e){
+            date = "8小时20分";
+        }
 
-
-        tvDates.setText(baseEntity.getStartDate()+" ~ "+baseEntity.getEndDate()+"    共8小时20分");
+        tvDates.setText(baseEntity.getStartDate()+" ~ "+baseEntity.getEndDate()+"    "+date);
         tvLeaveDate.setText(new SimpleDateFormat("MM-dd").format(new Date()));
     }
     public void leave(View v){
