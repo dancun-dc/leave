@@ -72,10 +72,10 @@ public class LeaveActivity extends AppCompatActivity {
             public void onTimeSet(TimePicker timePicker, int h, int m) {
                 String time=String.format("%s:%s",(h<10?"0"+h:""+h),(m<10?"0"+m:""+m));
                 if (v.getId()==R.id.tv_end_time){
-                    baseEntity.setEndDate(baseEntity.getEndDate()+"  "+time);
+                    tvEndTime.setText(time);
                    endTime = time;
                 }else{
-                    baseEntity.setStartDate(baseEntity.getStartDate()+"  "+time);
+                    tvStartTime.setText(time);
                     endTime = time;
                 }
 
