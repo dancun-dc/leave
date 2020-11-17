@@ -47,7 +47,7 @@ public class LeaveActivity extends AppCompatActivity {
         new DatePickerDialog(LeaveActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override//当选择某一个日期会执行 onDateSet这个函数
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                String date = String.format("%d-%d",month,day);
+                String date = String.format("%s-%s",(month<10?""+month:""+month),(day<10?"0":""+day));
                 if (v.getId()==R.id.tv_edit_satrt_date) {
                     tvStartDate.setText(date + "  ▼");
                     baseEntity.setStartDate(date);
@@ -68,7 +68,7 @@ public class LeaveActivity extends AppCompatActivity {
         new TimePickerDialog(LeaveActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int h, int s) {
-                String time=String.format("%d:%d",h,s);
+                String time=String.format("%s:%s",(h<10?"0"+h:""+h),(s<10?"0"+s:""+h));
                 if (v.getId()==R.id.tv_end_time){
                     baseEntity.setEndDate(baseEntity.getEndDate()+"  "+time);
                     tvEndTime.setText(time);
